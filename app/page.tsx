@@ -1,5 +1,12 @@
-import { MainSection } from "@/components/shared";
+import { CategoryOrbitSection, MainSection } from "@/components/shared";
+
+// идеи: отзывы-голосовые
 
 export default function Home() {
-  return <MainSection />;
+  return(
+    <><MainSection />
+  <CategoryOrbitSection />
+    </>
+  
+) ;
 }

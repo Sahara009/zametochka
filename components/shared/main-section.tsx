@@ -4,12 +4,11 @@ import backImage from "@/components/assets/back.svg";
 import buttonTape from "@/components/assets/backtape.png";
 import girlImage from "@/components/assets/girl.png";
 import tapeImage from "@/components/assets/tape.svg";
-import { Container } from "@/components/shared/container";
 
 export function MainSection() {
   return (
-    <section className="overflow-hidden bg-[#fbf6ea] pb-8 pt-2 sm:pb-12 lg:pb-10 lg:pt-0">
-      <Container className="relative min-h-[560px]">
+    <section className="overflow-hidden bg-[#f6efe2] pb-8 pt-2 sm:pb-12 lg:pb-10 lg:pt-0">
+    
         <div className="relative min-h-[560px] perspective-doodle lg:min-h-[600px]">
           <Image
             src={girlImage}
@@ -54,11 +53,11 @@ export function MainSection() {
 
             <p className="hero-body mt-5 max-w-[500px] text-[13px] leading-[1.35] text-neutral-800 sm:text-sm lg:text-[12px]">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the s standard dummy text
               ever since 1466, when designers at Letraset and James Mosley, the
               librarian at St Bride Printing Library in London, took a 1914
               Cicero translation and scrambled it to make dummy text for
-              Letraset's Body Type sheets.
+              Letrasets Body Type sheets.
             </p>
 
             <div className="hero-actions mt-5 flex flex-wrap items-center gap-6 sm:gap-9">
@@ -86,7 +85,7 @@ export function MainSection() {
             </div>
           </div>
         </div>
-      </Container>
+   
     </section>
   );
 }

@@ -1,0 +1,17 @@
+{
+   "ctxSearchMessage": {
+      "message": "Search Yandex for \"%s\""
+   },
+   "ctxSearchUrl": {
+      "message": "https://yandex.com/search/?from=startext&text={searchTerms}"
+   },
+   "description": {
+      "message": "Quick access to our search engine and other Yandex services"
+   },
+   "name": {
+      "message": "Start Page — Yandex"
+   },
+   "searchLocale": {
+      "message": "com"
+   }
+}

@@ -9,7 +9,7 @@ const menuItems = ["journals", "contacts", "about", "shipping"];
 
 export function Header() {
   return (
-    <header className="w-full bg-white">
+    <header className="w-full">
       <Container className="flex items-center justify-between py-3">
         <a
           href="#"

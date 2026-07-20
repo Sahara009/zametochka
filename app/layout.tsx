@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import { Header } from "@/components/shared/header";
+import { BrowserShell, Header } from "@/components/shared";
 
 const schoolbell = localFont({
   src: "../font/Schoolbell.ttf.woff",
@@ -23,11 +23,13 @@ export default function RootLayout({
       lang="ru"
       className={`${schoolbell.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <main className="min-h-screen">
-          <Header />
-          {children}
-        </main>
+      <body className="min-h-full flex flex-col bg-[#d8cbb8]">
+        <BrowserShell>
+          <main className="min-h-screen">
+            <Header />
+            {children}
+          </main>
+        </BrowserShell>
       </body>
     </html>
   );

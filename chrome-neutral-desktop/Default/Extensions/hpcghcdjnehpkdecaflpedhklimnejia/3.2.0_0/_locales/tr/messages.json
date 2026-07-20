@@ -1,0 +1,17 @@
+{
+   "ctxSearchMessage": {
+      "message": "Yandex'te bul: \"%s\""
+   },
+   "ctxSearchUrl": {
+      "message": "https://yandex.com.tr/search/?from=startext&text={searchTerms}"
+   },
+   "description": {
+      "message": "Aramaya ve Yandex'in diğer servislerine hızlı erişim"
+   },
+   "name": {
+      "message": "Açılış sayfası — Yandex"
+   },
+   "searchLocale": {
+      "message": "com.tr"
+   }
+}

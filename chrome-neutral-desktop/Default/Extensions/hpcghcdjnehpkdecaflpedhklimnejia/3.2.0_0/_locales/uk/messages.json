@@ -1,0 +1,17 @@
+{
+   "ctxSearchMessage": {
+      "message": "Шукати у Яндексі \"%s\""
+   },
+   "ctxSearchUrl": {
+      "message": "https://yandex.com/search/?from=startext&text={searchTerms}"
+   },
+   "description": {
+      "message": "Швидкий доступ до пошуку та інших сервісів Яндекса"
+   },
+   "name": {
+      "message": "Стартова — Яндекс"
+   },
+   "searchLocale": {
+      "message": "com"
+   }
+}
