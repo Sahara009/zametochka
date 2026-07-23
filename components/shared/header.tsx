@@ -5,14 +5,19 @@ import logo from "@/components/assets/logotype.svg";
 import headerLine from "@/components/assets/Vector1.svg";
 import { Container } from "@/components/shared/container";
 
-const menuItems = ["journals", "contacts", "about", "shipping"];
+const menuItems = [
+  { label: "shop", href: "/shop" },
+  { label: "contacts", href: "#" },
+  { label: "about", href: "#" },
+  { label: "shipping", href: "#" },
+];
 
 export function Header() {
   return (
     <header className="w-full">
       <Container className="flex items-center justify-between py-3">
         <a
-          href="#"
+          href="./"
           aria-label="Zametoshka home"
           className="shrink-0 transition-transform duration-300 ease-out hover:-rotate-2 hover:scale-105"
         >
@@ -32,11 +37,11 @@ export function Header() {
         >
           {menuItems.map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="relative transition-colors duration-300 hover:text-neutral-500 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-neutral-900 after:transition-all after:duration-300 hover:after:w-full"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>

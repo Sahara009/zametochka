@@ -6,6 +6,366 @@
   
 }
 
+.finder-sticker-section.finder-sticker-section {
+  overflow: hidden;
+  background: #fffaf0 !important;
+  color: #111;
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head {
+  max-width: 900px;
+  margin-bottom: clamp(24px, 4vw, 42px);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::before {
+  width: min(760px, 92vw);
+  height: clamp(70px, 10vw, 108px);
+  border-color: rgb(17 17 17 / 0.86);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::after {
+  width: min(710px, 88vw);
+  height: clamp(64px, 9vw, 98px);
+  border-color: rgb(180 35 35 / 0.52);
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-title {
+  font-size: clamp(42px, 6.8vw, 86px);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-title::after {
+  content: none;
+}
+
+.finder-category-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 10px;
+  max-width: 1040px;
+  margin: 0 auto clamp(26px, 4vw, 46px);
+}
+
+.finder-category-pill {
+  display: inline-grid;
+  min-height: 42px;
+  place-items: center;
+  border: 1px solid rgb(17 17 17 / 0.72);
+  border-radius: 999px;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.78), transparent 52%),
+    var(--category-bg, #f0dfbd);
+  box-shadow: 2px 4px 0 rgb(17 17 17 / 0.16);
+  padding: 7px 18px 8px;
+  color: #111;
+  font-size: clamp(17px, 2vw, 25px);
+  line-height: 1;
+  text-decoration: none;
+  text-transform: lowercase;
+  transform: rotate(var(--category-rotate));
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.finder-category-pill:nth-child(3n + 1) {
+  --category-bg: #f5c5ac;
+}
+
+.finder-category-pill:nth-child(3n + 2) {
+  --category-bg: #d8e4c1;
+}
+
+.finder-category-pill:nth-child(3n) {
+  --category-bg: #d8e0ef;
+}
+
+.finder-category-pill:hover,
+.finder-category-pill:focus-visible {
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.86), transparent 48%),
+    #fff0a8;
+  box-shadow: 3px 5px 0 rgb(17 17 17 / 0.22);
+  transform: translateY(-3px) rotate(calc(var(--category-rotate) * -1));
+}
+
+.finder-ribbons {
+  display: grid;
+  gap: 0;
+  width: min(100vw, 1280px);
+  margin-inline: auto;
+  border-block: 2px solid #111;
+}
+
+.finder-product-ribbon {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-inline: 2px solid #111;
+  background:
+    linear-gradient(90deg, rgb(255 250 240 / 0.96), rgb(255 250 240 / 0) 11% 89%, rgb(255 250 240 / 0.96)),
+    #fff6e3;
+  cursor: grab;
+  scrollbar-width: none;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.finder-product-ribbon + .finder-product-ribbon {
+  border-top: 2px solid #111;
+}
+
+.finder-product-ribbon::-webkit-scrollbar {
+  display: none;
+}
+
+.finder-product-ribbon:active {
+  cursor: grabbing;
+}
+
+.finder-product-ribbon-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  gap: 0;
+  padding: 0;
+  animation: finder-ribbon-left 34s linear infinite;
+  will-change: transform;
+}
+
+.finder-product-ribbon[data-direction="right"] .finder-product-ribbon-track {
+  animation-name: finder-ribbon-right;
+}
+
+.finder-product-ribbon:hover .finder-product-ribbon-track,
+.finder-product-ribbon:focus-within .finder-product-ribbon-track {
+  animation-play-state: paused;
+}
+
+.finder-product-ribbon .finder-product-sticker {
+  flex: 0 0 clamp(138px, 15vw, 214px);
+  min-height: clamp(178px, 19vw, 252px);
+  border-right: 1px solid rgb(17 17 17 / 0.2);
+  background: #fffaf0;
+  cursor: cell;
+  padding: clamp(9px, 1.3vw, 14px);
+  transform: none;
+  transition:
+    background 180ms ease,
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.finder-product-ribbon .finder-product-sticker:nth-child(n) {
+  transform: none;
+}
+
+.finder-product-ribbon .finder-product-sticker:hover {
+  background: #fff2bb;
+  cursor: cell;
+  filter: contrast(1.03);
+  transform: translateY(-4px);
+}
+
+.finder-product-ribbon .finder-product-photo {
+  aspect-ratio: 1 / 0.82;
+  border: 1px solid rgb(17 17 17 / 0.1);
+  border-radius: 4px;
+}
+
+.finder-product-ribbon .finder-product-sticker strong {
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.finder-product-ribbon .finder-product-sticker > span:not(.finder-product-photo) {
+  font-size: clamp(16px, 1.7vw, 22px);
+}
+
+.finder-product-ribbon .finder-product-sticker b {
+  font-size: 11px;
+}
+
+@keyframes finder-ribbon-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes finder-ribbon-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .finder-category-cloud {
+    justify-content: flex-start;
+    margin-inline: -2px;
+  }
+
+  .finder-category-pill {
+    min-height: 38px;
+    padding-inline: 14px;
+  }
+
+  .finder-ribbons {
+    width: calc(100vw - 28px);
+  }
+
+  .finder-product-ribbon .finder-product-sticker {
+    flex-basis: 142px;
+    min-height: 184px;
+  }
+}
+
+.finder-product-ribbon .finder-product-sticker,
+.finder-product-ribbon .finder-product-sticker * {
+  cursor: cell;
+}
+
+.finder-ribbons.finder-ribbons {
+  --ribbon-bleed: clamp(34px, 5vw, 70px);
+  gap: clamp(12px, 1.7vw, 20px) !important;
+  width: calc(100% + var(--ribbon-bleed) + var(--ribbon-bleed)) !important;
+  max-width: none;
+  margin-left: calc(var(--ribbon-bleed) * -1) !important;
+  margin-right: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 720px) {
+  .finder-ribbons.finder-ribbons {
+    --ribbon-bleed: 34px;
+    gap: 12px !important;
+    min-height: 398px;
+  }
+}
+
+.finder-product-ribbon .finder-product-sticker,
+.finder-product-ribbon .finder-product-sticker * {
+  cursor: cell;
+}
+
+.finder-category-pill {
+  border: 1px solid rgb(17 17 17 / 0.7);
+  appearance: none;
+}
+
+.finder-category-pill[data-active="true"] {
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.82), transparent 46%),
+    #fff0a8;
+  box-shadow:
+    inset 0 0 0 1px rgb(17 17 17 / 0.22),
+    3px 5px 0 rgb(17 17 17 / 0.2);
+  transform: translateY(-2px) rotate(calc(var(--category-rotate) * -1));
+}
+
+.finder-ribbons {
+  gap: clamp(10px, 1.5vw, 18px);
+  width: calc(100vw - 32px);
+  max-width: 1536px;
+  min-height: clamp(374px, 34vw, 520px);
+  margin-left: 50%;
+  border-block: 0;
+  opacity: 1;
+  transform: translateX(-50%);
+  transition:
+    opacity 180ms ease,
+    filter 180ms ease;
+}
+
+.finder-ribbons[data-switching="true"] {
+  filter: saturate(0.72);
+  opacity: 0.18;
+}
+
+.finder-product-ribbon {
+  border: 2px solid #111;
+  background:
+    linear-gradient(90deg, rgb(255 250 240 / 0.92), rgb(255 250 240 / 0) 7% 93%, rgb(255 250 240 / 0.92)),
+    repeating-linear-gradient(0deg, rgb(17 17 17 / 0.035) 0 1px, transparent 1px 16px),
+    #fff8e8;
+}
+
+.finder-product-ribbon + .finder-product-ribbon {
+  border-top: 2px solid #111;
+}
+
+.finder-product-ribbon-track {
+  align-items: stretch;
+  animation-duration: 31s;
+}
+
+.finder-product-ribbon .finder-product-sticker {
+  flex-basis: clamp(188px, 18vw, 278px);
+  min-height: clamp(172px, 16vw, 238px);
+  border-right: 1px solid rgb(17 17 17 / 0.22);
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.78), transparent 42%),
+    #fff4dc;
+  padding: clamp(8px, 1vw, 12px);
+}
+
+.finder-product-ribbon .finder-product-sticker:nth-child(2n) {
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.82), transparent 40%),
+    #f5ead4;
+}
+
+.finder-product-ribbon .finder-product-sticker:hover {
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.86), transparent 38%),
+    #fff0a8;
+}
+
+.finder-product-ribbon .finder-product-photo {
+  aspect-ratio: 1.65 / 1;
+  border: 1px solid rgb(17 17 17 / 0.14);
+  border-radius: 6px;
+  background-size: 200% 200%;
+  filter: contrast(1.06) saturate(0.82);
+}
+
+.finder-product-ribbon .finder-product-sticker strong {
+  margin-top: 7px;
+  font-size: 11px !important;
+  line-height: 0.98;
+}
+
+.finder-product-ribbon .finder-product-sticker > span:not(.finder-product-photo) {
+  font-size: clamp(18px, 1.7vw, 24px) !important;
+  line-height: 0.88 !important;
+}
+
+.finder-product-ribbon .finder-product-sticker b {
+  font-size: 11px !important;
+}
+
+@media (max-width: 720px) {
+  .finder-ribbons {
+    width: calc(100vw - 18px);
+    min-height: 386px;
+  }
+
+  .finder-product-ribbon .finder-product-sticker {
+    flex-basis: 184px;
+    min-height: 184px;
+  }
+}
+
 .site-browser-shell {
   box-sizing: border-box;
   width: min(calc(100% - 28px), 1540px);
@@ -3434,4 +3794,394 @@
     margin-top: 52px !important;
     transform: rotate(1deg) !important;
   }
+}
+
+.finder-sticker-section.finder-sticker-section {
+  overflow: hidden;
+  background: #fffaf0 !important;
+  color: #111;
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head {
+  max-width: 900px;
+  margin-bottom: clamp(24px, 4vw, 42px);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::before {
+  width: min(760px, 92vw);
+  height: clamp(70px, 10vw, 108px);
+  border-color: rgb(17 17 17 / 0.86);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::after {
+  width: min(710px, 88vw);
+  height: clamp(64px, 9vw, 98px);
+  border-color: rgb(180 35 35 / 0.52);
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-title {
+  font-size: clamp(42px, 6.8vw, 86px);
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-title::after {
+  content: none;
+}
+
+.finder-category-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 10px;
+  max-width: 1040px;
+  margin: 0 auto clamp(26px, 4vw, 46px);
+}
+
+.finder-category-pill {
+  display: inline-grid;
+  min-height: 42px;
+  place-items: center;
+  border: 1px solid rgb(17 17 17 / 0.72);
+  border-radius: 999px;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.78), transparent 52%),
+    var(--category-bg, #f0dfbd);
+  box-shadow: 2px 4px 0 rgb(17 17 17 / 0.16);
+  padding: 7px 18px 8px;
+  color: #111;
+  font-size: clamp(17px, 2vw, 25px);
+  line-height: 1;
+  text-decoration: none;
+  text-transform: lowercase;
+  transform: rotate(var(--category-rotate));
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.finder-category-pill:nth-child(3n + 1) {
+  --category-bg: #f5c5ac;
+}
+
+.finder-category-pill:nth-child(3n + 2) {
+  --category-bg: #d8e4c1;
+}
+
+.finder-category-pill:nth-child(3n) {
+  --category-bg: #d8e0ef;
+}
+
+.finder-category-pill:hover,
+.finder-category-pill:focus-visible {
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.86), transparent 48%),
+    #fff0a8;
+  box-shadow: 3px 5px 0 rgb(17 17 17 / 0.22);
+  transform: translateY(-3px) rotate(calc(var(--category-rotate) * -1));
+}
+
+.finder-ribbons {
+  display: grid;
+  gap: 0;
+  width: min(100vw, 1280px);
+  margin-inline: auto;
+  border-block: 2px solid #111;
+}
+
+.finder-product-ribbon {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-inline: 2px solid #111;
+  background:
+    linear-gradient(90deg, rgb(255 250 240 / 0.96), rgb(255 250 240 / 0) 11% 89%, rgb(255 250 240 / 0.96)),
+    #fff6e3;
+  cursor: grab;
+  scrollbar-width: none;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.finder-product-ribbon + .finder-product-ribbon {
+  border-top: 2px solid #111;
+}
+
+.finder-product-ribbon::-webkit-scrollbar {
+  display: none;
+}
+
+.finder-product-ribbon:active {
+  cursor: grabbing;
+}
+
+.finder-product-ribbon-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  gap: 0;
+  padding: 0;
+  animation: finder-ribbon-left 34s linear infinite;
+  will-change: transform;
+}
+
+.finder-product-ribbon[data-direction="right"] .finder-product-ribbon-track {
+  animation-name: finder-ribbon-right;
+}
+
+.finder-product-ribbon:hover .finder-product-ribbon-track,
+.finder-product-ribbon:focus-within .finder-product-ribbon-track {
+  animation-play-state: paused;
+}
+
+.finder-product-ribbon .finder-product-sticker {
+  flex: 0 0 clamp(138px, 15vw, 214px);
+  min-height: clamp(178px, 19vw, 252px);
+  border-right: 1px solid rgb(17 17 17 / 0.2);
+  background: #fffaf0;
+  padding: clamp(9px, 1.3vw, 14px);
+  transform: none;
+  transition:
+    background 180ms ease,
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.finder-product-ribbon .finder-product-sticker:nth-child(n) {
+  margin-top: 0 !important;
+  transform: none !important;
+}
+
+.finder-product-ribbon .finder-product-sticker:hover {
+  background: #fff2bb;
+  cursor: cell;
+  filter: contrast(1.03);
+  transform: translateY(-4px) !important;
+}
+
+.finder-product-ribbon .finder-product-sticker * {
+  cursor: cell;
+}
+
+.finder-product-ribbon-track:hover {
+  animation-play-state: paused;
+}
+
+.finder-product-ribbon .finder-product-photo {
+  aspect-ratio: 1 / 0.82;
+  border: 1px solid rgb(17 17 17 / 0.1);
+  border-radius: 4px;
+}
+
+.finder-product-ribbon .finder-product-sticker strong {
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.finder-product-ribbon .finder-product-sticker > span:not(.finder-product-photo) {
+  font-size: clamp(16px, 1.7vw, 22px);
+}
+
+.finder-product-ribbon .finder-product-sticker b {
+  font-size: 11px;
+}
+
+@media (max-width: 720px) {
+  .finder-category-cloud {
+    justify-content: flex-start;
+    margin-inline: -2px;
+  }
+
+  .finder-category-pill {
+    min-height: 38px;
+    padding-inline: 14px;
+  }
+
+  .finder-ribbons {
+    width: calc(100vw - 28px);
+  }
+
+  .finder-product-ribbon .finder-product-sticker {
+    flex-basis: 142px;
+    min-height: 184px;
+  }
+}
+
+.finder-product-ribbon .finder-product-sticker,
+.finder-product-ribbon .finder-product-sticker * {
+  cursor: cell;
+}
+
+.finder-ribbons.finder-ribbons {
+  --ribbon-bleed: clamp(34px, 5vw, 70px);
+  gap: clamp(12px, 1.7vw, 20px) !important;
+  width: calc(100% + var(--ribbon-bleed) + var(--ribbon-bleed)) !important;
+  max-width: none;
+  margin-left: calc(var(--ribbon-bleed) * -1) !important;
+  margin-right: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 720px) {
+  .finder-ribbons.finder-ribbons {
+    --ribbon-bleed: 34px;
+    gap: 12px !important;
+    min-height: 398px;
+  }
+}
+
+.finder-category-pill {
+  appearance: none;
+}
+
+.finder-category-pill[data-active="true"] {
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.82), transparent 46%),
+    #fff0a8;
+  box-shadow:
+    inset 0 0 0 1px rgb(17 17 17 / 0.22),
+    3px 5px 0 rgb(17 17 17 / 0.2);
+  transform: translateY(-2px) rotate(calc(var(--category-rotate) * -1));
+}
+
+.finder-ribbons[data-switching="true"] {
+  filter: saturate(0.72);
+  opacity: 0.18;
+}
+
+.finder-product-ribbon .finder-product-sticker {
+  flex-basis: clamp(188px, 18vw, 278px);
+  min-height: clamp(172px, 16vw, 238px);
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.78), transparent 42%),
+    #fff4dc;
+  padding: clamp(8px, 1vw, 12px);
+}
+
+.finder-product-ribbon .finder-product-sticker:nth-child(2n) {
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.82), transparent 40%),
+    #f5ead4;
+}
+
+.finder-product-ribbon .finder-product-sticker:hover {
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.86), transparent 38%),
+    #fff0a8;
+}
+
+.finder-product-ribbon .finder-product-photo {
+  aspect-ratio: 1.65 / 1;
+  border-radius: 6px;
+}
+
+.finder-product-ribbon .finder-product-sticker > span:not(.finder-product-photo) {
+  font-size: clamp(18px, 1.7vw, 24px) !important;
+  line-height: 0.88 !important;
+}
+
+@media (max-width: 720px) {
+  .finder-product-ribbon .finder-product-sticker {
+    flex-basis: 184px;
+    min-height: 184px;
+  }
+}
+
+.finder-sticker-section.finder-sticker-section .finder-product-ribbon .finder-product-photo {
+  aspect-ratio: 1.65 / 1 !important;
+  border-radius: 6px;
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::before,
+.finder-sticker-section.finder-sticker-section .shop-categories-head::after,
+.finder-category-pill,
+.finder-ribbons,
+.finder-product-ribbon,
+.finder-product-ribbon + .finder-product-ribbon,
+.finder-product-ribbon .finder-product-sticker,
+.finder-sticker-section.finder-sticker-section .finder-product-ribbon .finder-product-photo {
+  border: 0 !important;
+}
+
+.finder-category-pill {
+  box-shadow: none;
+}
+
+.finder-category-pill[data-active="true"],
+.finder-category-pill:hover,
+.finder-category-pill:focus-visible {
+  box-shadow: none;
+}
+
+.finder-product-ribbon {
+  background: #fffaf0;
+}
+
+.finder-product-ribbon .finder-product-sticker {
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.64), transparent 48%),
+    #fff5e2;
+}
+
+.finder-product-ribbon .finder-product-sticker:nth-child(2n) {
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.58), transparent 46%),
+    #f7eddb;
+}
+
+.finder-product-ribbon .finder-product-sticker:hover {
+  background:
+    linear-gradient(150deg, rgb(255 255 255 / 0.7), transparent 42%),
+    #fff0c7;
+}
+
+.finder-sticker-section.finder-sticker-section .finder-category-pill,
+.finder-sticker-section.finder-sticker-section .finder-ribbons,
+.finder-sticker-section.finder-sticker-section .finder-product-ribbon,
+.finder-sticker-section.finder-sticker-section .finder-product-ribbon + .finder-product-ribbon,
+.finder-sticker-section.finder-sticker-section .finder-product-sticker,
+.finder-sticker-section.finder-sticker-section .finder-product-photo {
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+}
+
+.finder-sticker-section.finder-sticker-section .finder-product-ribbon-track {
+  animation-duration: 58s !important;
+}
+
+.finder-sticker-section.finder-sticker-section .finder-product-ribbon .finder-product-sticker {
+  flex-basis: clamp(176px, 16vw, 236px);
+  min-height: clamp(284px, 28vw, 382px);
+  padding: clamp(10px, 1.2vw, 16px);
+}
+
+.finder-sticker-section.finder-sticker-section .finder-product-ribbon .finder-product-photo {
+  aspect-ratio: 1 / 1.22 !important;
+}
+
+@media (max-width: 720px) {
+  .finder-sticker-section.finder-sticker-section .finder-ribbons {
+    min-height: 584px;
+  }
+
+  .finder-sticker-section.finder-sticker-section .finder-product-ribbon .finder-product-sticker {
+    flex-basis: 164px;
+    min-height: 276px;
+  }
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::before,
+.finder-sticker-section.finder-sticker-section .shop-categories-head::after {
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::before {
+  border-color: rgb(17 17 17 / 0.82) !important;
+}
+
+.finder-sticker-section.finder-sticker-section .shop-categories-head::after {
+  border-color: rgb(180 35 35 / 0.48) !important;
 }

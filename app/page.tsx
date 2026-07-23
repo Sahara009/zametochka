@@ -1,11 +1,11 @@
-import { CategoryOrbitSection, MainSection } from "@/components/shared";
+import {  MainSection } from "@/components/shared";
 
 // идеи: отзывы-голосовые
 
 export default function Home() {
   return(
-    <><MainSection />
-  <CategoryOrbitSection />
+    <>
+    <MainSection />
     </>
   
 ) ;
